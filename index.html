@@ -1,0 +1,212 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>onLinePHARMACY</title>
+  <!-- **************************** CSS **************************** -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <!-- **************************** CSS **************************** -->
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+    <a class="navbar-brand" style="font-weight: bolder;color:rgb(199, 193, 193);" href="#">Trouver le Pharmacie
+      Ouvert</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div class="form-group">
+          <input type="date" class="primary browser-default custom-select" id="datetextbox"
+            style="margin-left: 10px; margin-right: 10px;" />
+        </div>
+
+        <div class="form-group">
+          <select class="browser-default custom-select" id="wilaya" style="margin-right: 2px">
+            <option value="00">Choisir un wilaya</option>
+            <option value="01">Adrar</option>
+            <option value="02">Chlef</option>
+            <option value="03">Laghouat</option>
+            <option value="04">Oum El Bouaghi</option>
+            <option value="05">Batna</option>
+            <option value="06">Béjaïa</option>
+            <option value="07">Biskra</option>
+            <option value="08">Bechar</option>
+            <option value="09">Blida</option>
+            <option value="10">Bouira</option>
+
+            <option value="11">Tamanrasset</option>
+            <option value="12">Tébessa</option>
+            <option value="13">Tlemcen</option>
+            <option value="14">Tiaret</option>
+            <option value="15">Tizi Ouzou</option>
+            <option value="16">Alger</option>
+            <option value="17">Djelfa</option>
+
+            <option value="18">Jijel</option>
+            <option value="19">Sétif</option>
+            <option value="20">Saïda</option>
+            <option value="21">Skikda</option>
+            <option value="22">Sidi Bel Abbès</option>
+            <option value="23">Annaba</option>
+            <option value="24">Guelma</option>
+            <option value="25">Constantine</option>
+            <option value="26">Médéa</option>
+            <option value="27">Mostaganem</option>
+            <option value="28">M'Sila</option>
+            <option value="29">Mascara</option>
+
+            <option value="30">Ouargla</option>
+
+            <option value="31">Oran</option>
+            <option value="32">El Bayadh</option>
+            <option value="33">Illizi</option>
+            <option value="34">Bordj Bou Arreridj</option>
+            <option value="35">Boumerdès</option>
+            <option value="36">El Tarf</option>
+            <option value="37">Tindouf</option>
+            <option value="38">Tissemsilt</option>
+            <option value="39">El Oued</option>
+            <option value="40">Khenchela</option>
+            <option value="41">Souk Ahras</option>
+            <option value="42">Tipaza</option>
+
+            <option value="43">Mila</option>
+            <option value="44">Aïn Defla</option>
+            <option value="45">Naâma</option>
+            <option value="46">Aïn Témouchent</option>
+            <option value="47">Ghardaïa</option>
+            <option value="48">Relizane</option>
+            <option value="49">Timimoun</option>
+            <option value="50">Bordj Badji Mokhtar</option>
+
+            <option value="51">Ouled Djellal</option>
+            <option value="52">Béni Abbès</option>
+            <option value="53">In Salah</option>
+            <option value="54">In Guezzam</option>
+            <option value="55">Touggourt</option>
+            <option value="56">Djanet</option>
+            <option value="57">El Meghaier</option>
+            <option value="58">El Menia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+
+          <select class="browser-default custom-select" id="Pharmaciename"
+            style="margin-left: 5px; margin-right: 10px;">
+            <option value="">Liste des Pharmacie</option>
+            <option >A</option>
+            <option >B</option>
+            <option >C</option>
+            <option >D</option>
+            <option >E</option>
+            <option >Autre</option>
+          </select>
+        </div>
+        <button type="button" id="chercher" VALUE="Refresh" class="btn btn-success">Cherche</button>
+
+      </form>
+    </div>
+  </nav>
+  <!-- ***************************** FIN DE NAV BAR ********************************  -->
+  <!--  DEBUT DE SIDE BAR  -->
+    <aside>
+      <h4>Liste <span class="badge badge-secondary">Pharmacie</span> 
+        <span class="badge badge-pill badge-success">Ouvert</span></h4>
+        <div class="form-group">
+          <select class="form-control form-control-sm" id="medication">
+            <option value="">Liste des MÉDICATION</option>
+            <option>DOLIPRANE</option>
+            <option>EFFERALGAN</option>
+            <option>DAFALGAN</option>
+
+            <option>LEVOTHYROX</option>
+            <option>IMODIUM</option>
+            <option>KARDEGIC</option>
+            <option>SPASFON</option>
+
+            <option>ISIMIG</option>
+            <option>TAHOR</option>
+            <option>SPEDIFEN</option>
+            <option>VOLTARENE</option>
+
+            <option>ELUDRIL</option>
+            <option>IXPRIM</option>
+            <option>PARACETAMOL BIOGARAN</option>
+            <option>FORLAX</option>
+
+            <option>MAGNE B6</option>
+            <option>HELICIDINE</option>
+            <option>CLAMOXYL</option>
+            <option>PIASCLEDINE</option>
+
+            <option>LAMALINE</option>
+            <option>GAVISCON</option>
+            <option>DAFLON</option>
+            <option>ANTARENE</option>
+
+            <option>RHINOFLUIMUCIL</option>
+            <option>PLAVIX</option>
+            <option>MOPRAL</option>
+            <option>SUBUTEX</option>
+
+            <option>AERIUS</option>
+            <option>ORELOX</option>
+            <option>INEXIUM</option>
+          </select>
+        </div>
+
+        <div id="listpharmacie">
+              <div class="alert alert-dark" role="alert">
+                Choise le type de medication pour filtre la liste des pharmacie ou ce trouve ce medicament 
+              </div>
+          </div>        
+    </aside>
+    <!-- ***********************************  Map Element *********************************** -->
+    <div id="map"></div>
+    <!-- ***********************************  Map Element *********************************** -->
+  </div>
+
+  <!-- **************************** Scripts **************************** -->
+  
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster-src.js"></script>
+  <script src="https://cdn.rawgit.com/aparshin/leaflet-boundary-canvas/f00b4d35/src/BoundaryCanvas.js"></script>
+  <script src="http://matchingnotes.com/javascripts/leaflet-google.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="data/nbw.js"></script>
+
+  <script src="data/globalWilayat.js"></script>
+  <script src="data/wilayat.js"></script>
+  <script src="data/test.js"></script>
+  <script src="/js/JQControle.js"></script>
+
+  <script src="/js/script.js"></script>
+  <!-- ****************************Fin Scripts **************************** -->
+
+  <!-- **************************** Footer **************************** -->
+
+  <footer>
+  <div class="footer-copyright bg-secondary  text-center py-3">© 2021 Copyright:
+    <a href="https://facebook.com/walid.menghour.3">Walid MENGHOUR</a>
+  </div>
+    </footer>
+</body>
+
+</html>

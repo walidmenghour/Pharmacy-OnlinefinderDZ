@@ -1,0 +1,38 @@
+ var listpharmacie =[ {
+ 	'code':100,
+ 	'Nom&Prenom':'',
+ 	'adresse':'',
+ 	'numero':''
+
+ }, {
+ 	'code':101,
+ 	'Nom&Prenom':'',
+ 	'adresse':'',
+ 	'numero':''
+
+ }, {
+ 	'code':102,
+ 	'Nom&Prenom':'',
+ 	'adresse':'',
+ 	'numero':''
+
+ }, {
+ 	'code':103,
+ 	'Nom&Prenom':'',
+ 	'adresse':'',
+ 	'numero':''
+
+ }, {
+ 	'code':104,
+ 	'Nom&Prenom':'',
+ 	'adresse':'',
+ 	'numero':''
+ }]
+
+
+ 	100	BOUMCID Fatma   Zohra	Rue  Faza  Chekfa	034.45.33.95
+ 	101	YAHI  Abdelmadjid	Chekfa	034.45.31.47
+ 	102	BENOUAR  Amel	Chekfa	034.45.35.57
+ 	104	BOUCHAIR  Makhlouf	Chekfa	 
+ 	105	MOSTFEI Imen	Chekfa Centre	 
+ 	106	ZINE Rouikha  Nadjia	Djimar  Daira  Chekfa	

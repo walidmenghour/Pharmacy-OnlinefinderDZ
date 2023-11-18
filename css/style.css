@@ -1,0 +1,79 @@
+html,
+body,
+.wrapper {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(156, 192, 249);
+}
+.navigation,
+.content {
+  display: table-cell;
+  float: none;
+  vertical-align: top;
+}
+/*
+.wrapper {
+  display: table;
+  width: 100%;
+  margin-top: -43px;
+  padding-top: 43px;
+}
+*/
+.header {
+  height: 43px;
+}
+
+.row {
+  height: 100%;
+  margin: 0;
+  display: table-row;
+}
+
+.row:before,
+.row:after {
+  content: none;
+}
+
+.navigation {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#map {
+  width: 80%;
+  height: 80vh;
+  border-radius: 20px;
+  float: left;
+  background-color: rgb(0, 206, 206);
+  height: 90%;
+  padding: 20px;
+  z-index: 1;
+}
+#content-map {
+  /* border: 2px solid rgb(46, 177, 20); */
+  overflow-y: auto;
+}
+aside {
+  border-right: 5px dotted black;
+  border-radius: 25px;
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 90%;
+  z-index: 0;
+}
+
+#listpharmacie {
+  overflow-y: auto;
+  scrollbar-color:rgb(219, 225, 235) rgb(156, 192, 249);
+  scrollbar-width: thin;
+  padding: 2px 5px 2px 5px;
+  height: 85%;
+  max-height: 85%;
+}
+
+footer {
+  clear: both;
+  z-index: 2;
+}
